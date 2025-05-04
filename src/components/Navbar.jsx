@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useTheme } from "../context/ThemeContext";
-
+import "./Navbar.css"
 const Navbar = () => {
   const { isDarkMode, toggleTheme } = useTheme();
   return (
-    <nav className={`navbar ${isDarkMode ? "dark" : "light"}`}>
+    <nav className={`Navbar ${isDarkMode ? "dark" : "light"}`}>
       <div className="container">
         <Link to="/" className="nav-title">
           Quizy🧩
