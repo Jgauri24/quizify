@@ -1,6 +1,7 @@
-import { BrowserRouter as Router, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import {ThemeProvider} from "./context/ThemeContext"
+import Login from './pages/Login';
 
 
 const App = () => {
@@ -10,7 +11,7 @@ const App = () => {
   <div className="app">
     <Navbar/>
     <Routes>
-
+    <Route path="/" element={<Login />} />
     </Routes>
 </div>
   </Router>
