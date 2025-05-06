@@ -1,6 +1,6 @@
 .about{
 min-height:100vh;
-background-color: #f7fbff;
+background-color: rgb(146, 190, 244) ;
 display: flex;
 justify-content:center ;
 align-items: center;
