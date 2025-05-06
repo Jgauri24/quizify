@@ -1,0 +1,110 @@
+.quizy-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background: transparent;
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .text-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 4rem;
+    font-weight: 800;
+    color: #1976d2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  
+  .logo-text {
+    background: linear-gradient(45deg, #1976d2, #1565c0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 0.5rem;
+    animation: colorShift 3s ease infinite;
+  }
+  
+  .puzzle-piece {
+    font-size: 2.5rem;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.1));
+    animation: rotate 2s ease infinite;
+    display: inline-block;
+    transition: transform 0.3s ease;
+  }
+  
+  .puzzle-piece:hover {
+    transform: scale(1.2);
+  }
+  
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(15deg);
+    }
+    75% {
+      transform: rotate(-15deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+  
+  @keyframes colorShift {
+    0% {
+      background: linear-gradient(45deg, #1976d2, #1565c0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    50% {
+      background: linear-gradient(45deg, #1565c0, #1976d2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    100% {
+      background: linear-gradient(45deg, #1976d2, #1565c0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+  
+  /* Hover effects */
+  .logo-container:hover .logo-text {
+    animation: bounce 0.5s ease;
+  }
+  
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .text-logo {
+      font-size: 2.8rem;
+    }
+    .puzzle-piece {
+      font-size: 2.3rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .text-logo {
+      font-size: 2.5rem;
+    }
+    .puzzle-piece {
+      font-size: 2rem;
+    }
+  }

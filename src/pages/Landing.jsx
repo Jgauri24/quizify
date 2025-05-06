@@ -1,17 +1,14 @@
 import React from 'react'
 import { Link } from "react-router-dom";
 import "./Landing.css";
+import QuizyLogo from '../assets/QuizLogo';
 const Landing = () => {
   return (
     <div className="landing">
         <div className="landing-card">
-        <img
-          src="src/assets/landing-illustration.svg"
-          alt="Quiz Illustration"
-          className="landing-img"
-        />
+        <QuizyLogo className="landing-img" />
         <h1>
-            Welcome to Quizy!🧩
+            Welcome to Quizy!
         </h1>
         <p className="landing-tagline">
         Test your knowledge with fun quizzes. Ready to play?
