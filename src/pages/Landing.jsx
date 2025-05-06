@@ -13,14 +13,17 @@ const Landing = () => {
         <h1>
             Welcome to Quizy!🧩
         </h1>
-<p className="landing-buttons">
+        <p className="landing-tagline">
+        Test your knowledge with fun quizzes. Ready to play?
+        </p>
+<div className="landing-buttons">
     <Link to="/quiz" className="btn btn-primary">
     Start Quiz
     </Link>
     <Link to="/about" className='btn btn-secondary'>
     Learn More
     </Link>
-</p>
+</div>
         </div>
     </div>
   )
