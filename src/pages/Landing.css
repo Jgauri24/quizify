@@ -1,61 +1,57 @@
-.landing{
-min-height: 100vh;
-background:#1565c0;
-display:flex;
-justify-content: center;
-align-items: center
-;
+.landing {
+  min-height: 100vh;
+  background: #1565c0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.landing-card{
-    min-height: 50vh;
-    background: #fff;
-    border-radius: 20px;
-    box-shadow: 0 4px 24px rgba(25, 118, 210, 0.08);
-    padding:2.5rem 2rem;
-    max-width:350px ;
-    width:100%;
-    text-align: center;
+.landing-card {
+  min-height: 50vh;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 4px 24px rgba(25, 118, 210, 0.08);
+  padding: 2.5rem 2rem;
+  max-width: 350px;
+  width: 100%;
+  text-align: center;
 }
 
-h1{
-    font-size: 2.4rem;
+h1 {
+  font-size: 2.4rem;
 }
-.landing-tagline{
-    color:#1976d2;
-    font-size: 1.1rem;
-    margin-bottom: 2.5rem;
-
-
+.landing-tagline {
+  color: #1976d2;
+  font-size: 1.1rem;
+  margin-bottom: 2.5rem;
 }
-.landing-buttons{
-    display:flex;
-    flex-direction: column;
-    gap: 1.8rem;
-    align-items: center;
+.landing-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  align-items: center;
 }
-.btn{
-    display:block;
-    width:100%;
-    font-size: 1.1rem;
-    padding: 0.8rem;
-    border-radius: 8px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: background 0.2s,color 0.2s;
-    border: none;
-
+.btn {
+  display: block;
+  width: 100%;
+  font-size: 1.1rem;
+  padding: 0.8rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+  border: none;
 }
-.btn-primary{
-    background-color: #1976d2;
-    color:#fff
+.btn-primary {
+  background-color: #1976d2;
+  color: #fff;
 }
-.btn-primary:hover{
-    background-color: #1565c0;
+.btn-primary:hover {
+  background-color: #1565c0;
 }
-.btn-secondary{
-    background-color: #e3f0ff;
+.btn-secondary {
+  background-color: #e3f0ff;
   color: #1976d2;
 }
-.btn-secondary:hover{
-    background-color:#bbdefb ;
+.btn-secondary:hover {
+  background-color: #bbdefb;
 }
