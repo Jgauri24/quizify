@@ -4,6 +4,7 @@ import Landing from './pages/Landing';
 import About from './pages/About';
 import Quiz from "./pages/Quiz";
 import Login from "./pages/Login";
+import Leaderboard from "./pages/Leaderboard";
 import "./App.css"
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
       <Route path="/about" element={<About/>}/>
       <Route path ="/quiz" element={<Quiz/>}/>
       <Route path="/login" element={<Login />} />
+      <Route path="/leaderboard" element={<Leaderboard/>}/>
 
     </Routes>
   </Router>

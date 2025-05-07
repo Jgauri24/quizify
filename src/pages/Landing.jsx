@@ -13,7 +13,7 @@ const Landing = () => {
         </p>
         <div className="landing-buttons">
           <Link to="/login" className="btn btn-primary">
-            Start Quiz
+            LogIn
           </Link>
           <Link to="/about" className="btn btn-secondary">
             Learn More
