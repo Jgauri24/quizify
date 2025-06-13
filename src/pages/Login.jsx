@@ -4,13 +4,13 @@ import LoginText from "../assets/LoginText";
 import "./Login.css"
 const Login = () => {
   const [username, setUsername] = useState("");
-  const [difficulty, setDifficulty] = useState("medium");
+  const [password, setPassword] = useState("medium");
   const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
     if (username.trim()) {
       localStorage.setItem("username", username);
-      localStorage.setItem("difficulty", difficulty);
+      localStorage.setItem("password", password);
 
       navigate("/quiz");
     }
@@ -31,17 +31,16 @@ const Login = () => {
             />
           </div>
           <div className="form-group">
-            <label className="form-label">Difficulty Level</label>
-            <select
-              value={difficulty}
-              onChange={(e) => setDifficulty(e.target.value)}
+            <label className="form-label">Password</label>
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               className="form-input"
-            >
-              <option value="easy">Easy</option>
-              <option value="medium">Medium</option>
-              <option value="hard">Hard</option>
-            </select>
+              required
+            />
           </div>
+          
           <button type="submit" className="submit-button">
             Start Quiz
           </button>
