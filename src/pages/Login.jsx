@@ -10,7 +10,7 @@ const Login = () => {
     e.preventDefault();
     if (username.trim()) {
       localStorage.setItem("username", username);
-      localStorage.setItem("password", password);
+      localStorage.setItem("passwordt", password);
 
       navigate("/quiz");
     }

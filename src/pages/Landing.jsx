@@ -12,8 +12,8 @@ const Landing = () => {
           Test your knowledge with fun quizzes. Ready to play?
         </p>
         <div className="landing-buttons">
-          <Link to="/login" className="btn btn-primary">
-            LogIn
+          <Link to="/" className="btn btn-primary">
+            Start Quiz
           </Link>
           <Link to="/about" className="btn btn-secondary">
             Learn More
