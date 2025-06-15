@@ -44,7 +44,7 @@ setError("Incorrect Password"
         {error && <div className="error-message">{error}</div>}
         <form onSubmit={handleSubmit}>
           <div className="form-group">
-            <label className="form-label">Username</label>
+            <label className="form-label">Email</label>
             <input
               type="email"
               value={email}
