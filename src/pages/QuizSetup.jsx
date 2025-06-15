@@ -1,131 +1,117 @@
-// import React, { useState, useEffect, useMemo } from "react";
-// import quizData from "../data/questions.json";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-// function QuizSetup({ config, onComplete, onLogout }) {
-//   const [currentQuestion, setCurrentQuestion] = useState(0);
-//   const [selectedAnswer, setSelectedAnswer] = useState(null);
-//   const [score, setScore] = useState(0);
-//   const [timeLeft, setTimeLeft] = useState(config.timeLimit);
-//   const [questions, setQuestions] = useState([]);
-//   const [showFeedback, setShowFeedback] = useState(false);
+const QuizSetup = () => {
+  const navigate = useNavigate();
+  const [formData, setFormData] = useState({
+    numQuestions: 10,
+    category: "general",
+    level: "easy",
+    timePerQuestion: 10,
+    trialMode: false,
+  });
+  const categories = [
+    {id:"general",name:"General Knowledge"},
+    { id: "geography", name: "Geography" },
+    { id: "technology", name: "Technology" },
+    { id: "sports", name: "Sports" },
+    { id: "entertainment", name: "Entertainment" },
+    { id: "literature", name: "Literature" },
+    { id: "history", name: "History" },
+    { id: 'science', name: 'Science' },
+  ];
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: type === "checkbox" ? checked : value,
+    }));
+  };
 
-//   const shuffleArray = (array) => [...array].sort(() => 0.5 - Math.random());
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const timelimit = formData.trialMode ? 20 : formData.timePerQuestion;
+    navigate("/quiz", { state: { ...formData, timePerQuestion: timelimit } });
+  };
+  return (
+    <div className="quiz-setup-container">
+      <div className="quiz-setup-content">
+        <h2>Quiz Setup</h2>
+        <form onSubmit={handleSubmit}>
+          <div className="form-group">
+            <label htmlFor="numQuestions">Number of Questions</label>
+            <input
+              type="number"
+              id="numQuestions"
+              name="numQuestions"
+              min="1"
+              max="20"
+              value={formData.numQuestions}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="category">Category</label>
+            <select
+              name="category"
+              id="category"
+              value={formData.category}
+              required
+              onChange={handleChange}
+            >
+              {categories.map((category) => (
+                <option key={category.id} value={category.id}>
+                  {category.name}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div className="form-group">
+            <label htmlFor="level">Difficulty Level</label>
+            <select
+              name="level"
+              id="level"
+              value={formData.level}
+              onChange={handleChange}
+              required
+            >
+              <option value="easy">Easy</option>
+              <option value="medium">Medium</option>
+              <option value="hard">Hard</option>
+            </select>
+          </div>
+          <div className="form-group">
+            <label htmlFor="timePerQuestion">Time per Question (seconds)</label>
+            <input
+              type="number"
+              id="timePerQuestion"
+              name="timePerQuestion"
+              min="5"
+              max="45"
+              value={formData.timePerQuestion}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="form-group checkbox">
+            <label>
+              <input
+                type="checkbox"
+                name="trialMode"
+                checked={formData.trialMode}
+                onChange={handleChange}
+              />
+              Trial Mode (20 seconds per question)
+            </label>
+          </div>
+          <button type="submit" className="start-quiz-btn">
+            Start Quiz
+          </button>
+        </form>
+      </div>
+    </div>
+  );
+};
 
-//   const filteredQuestions = useMemo(() => {
-//     let filtered = [...quizData.questions];
-//     if (config.category !== "all") {
-//       filtered = filtered.filter((q) => q.category.toLowerCase() === config.category);
-//     }
-//     if (config.difficulty !== "all") {
-//       filtered = filtered.filter((q) => q.difficulty === config.difficulty);
-//     }
-//     const shuffled = shuffleArray(filtered).slice(0, 5);
-//     return shuffled.map((q) => ({
-//       ...q,
-//       options: shuffleArray(q.options),
-//     }));
-//   }, [config]);
-
-//   useEffect(() => {
-//     setQuestions(filteredQuestions);
-//   }, [filteredQuestions]);
-
-//   useEffect(() => {
-//     if (timeLeft > 0 && !showFeedback) {
-//       const timer = setTimeout(() => {
-//         setTimeLeft((prev) => prev - 1);
-//       }, 1000);
-//       return () => clearTimeout(timer);
-//     } else if (timeLeft === 0 && !showFeedback) {
-//       handleNextQuestion();
-//     }
-//   }, [timeLeft, showFeedback]);
-
-//   const handleAnswerSelect = (answer) => {
-//     if (showFeedback) return;
-//     setSelectedAnswer(answer);
-//     setShowFeedback(true);
-//     if (answer === questions[currentQuestion].correctAnswer) {
-//       setScore((prev) => prev + 1);
-//     }
-//   };
-
-//   const handleNextQuestion = () => {
-//     if (currentQuestion < questions.length - 1) {
-//       setCurrentQuestion((prev) => prev + 1);
-//       setSelectedAnswer(null);
-//       setShowFeedback(false);
-//       setTimeLeft(config.timeLimit);
-//     } else {
-//       onComplete({
-//         score,
-//         totalQuestions: questions.length,
-//         timeLimit: config.timeLimit,
-//       });
-//     }
-//   };
-
-//   if (!questions.length) {
-//     return (
-//       <div className="container">
-//         {quizData.questions.length === 0
-//           ? "No questions available!"
-//           : "Loading questions..."}
-//       </div>
-//     );
-//   }
-
-//   const question = questions[currentQuestion];
-//   const progress = ((currentQuestion + 1) / questions.length) * 100;
-
-//   return (
-//     <div className="container">
-//       <div className="quiz-header">
-//         <button onClick={onLogout} className="logout-btn">
-//           Logout
-//         </button>
-//         <div className="timer">Time Left: {timeLeft}s</div>
-//       </div>
-
-//       <div className="progress-bar">
-//       <div className="progress" style={{ width: `${progress}%` }}></div>
-
-//       </div>
-
-//       <h2>
-//         Question {currentQuestion + 1} of {questions.length}
-//       </h2>
-//       <p className="question">{question.question}</p>
-
-//       <div className="options">
-//         {question.options.map((option, index) => (
-//           <div
-//             key={index}
-//             className={`option ${showFeedback ? "disabled" : ""} ${
-//               showFeedback
-//                 ? option === question.correctAnswer
-//                   ? "correct"
-//                   : option === selectedAnswer
-//                   ? "incorrect"
-//                   : ""
-//                 : ""
-//             }`}
-//             onClick={() => handleAnswerSelect(option)}
-//           >
-//             {option}
-//           </div>
-//         ))}
-//       </div>
-
-//       {showFeedback && (
-//         <button onClick={handleNextQuestion} className="next-btn">
-//           {currentQuestion < questions.length - 1
-//             ? "Next Question"
-//             : "Finish Quiz"}
-//         </button>
-//       )}
-//     </div>
-//   );
-// }
-
-// export default QuizSetup;
+export default QuizSetup;
