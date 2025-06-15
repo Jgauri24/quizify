@@ -21,7 +21,7 @@ const App = () => {
     <Route path="/signup" element={!currentUser?<Signup/>:<Navigate to="/"/>} />
     <Route path="/" element={currentUser?<Landing/>:<Navigate to="/login"/>} />
     <Route path="/about" element={<About/>} />
-    <Route path="/quiz-setup" element={currentUser?<QuizSetup/>:<Navigate to="/login"/>} />
+    <Route path="/quiz-setup" element={currentUser ? <QuizSetup /> : <Navigate to="/login" />} />
     <Route path="/quiz" element={currentUser?<Quiz/>:<Navigate to="/login"/>} />
     <Route path="/result" element={currentUser?<Result/>:<Navigate to="/login"/>} />
     <Route path="/review" element={currentUser?<Review/>:<Navigate to="/login"/>} />
