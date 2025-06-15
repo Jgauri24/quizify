@@ -44,7 +44,7 @@ setError("Incorrect Password"
         {error && <div className="error-message">{error}</div>}
         <form onSubmit={handleSubmit}>
           <div className="form-group">
-            <label className="form-label">Email</label>
+            <label htmlFor="email"className="form-label">Email</label>
             <input
               type="email"
               value={email}
@@ -52,12 +52,14 @@ setError("Incorrect Password"
               className="form-input"
               required
               placeholder="Enter your email"
+              id="email"
             />
           </div>
           <div className="form-group">
-            <label className="form-label">Password</label>
+            <label htmlFor="password" className="form-label">Password</label>
             <input
               type="password"
+              id="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               className="form-input"
