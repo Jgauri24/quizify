@@ -1,0 +1,22 @@
+.timer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:1rem 0
+}
+.timer-circle{
+    width:60px;
+    height:60px;
+    border-radius:50% ;
+    background-color: #1a73e8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    
+}
+.timer-text{
+    color:white;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
