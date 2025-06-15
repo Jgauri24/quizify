@@ -12,31 +12,35 @@ const Login = () => {
   const {login}=useAuth();
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
-  try{
-        setError("")
-    setLoading(true)
-        
-      await login(email,password);
-      navigate("/")}
-
-
-    catch(error){
-console.error("login error:",error)
-if (error.code==="auth/invalid-email"){
-  setError("Invalid email address")
+  
+    try {
+      setError("");
+      setLoading(true);
+      await login(email, password);
+      navigate("/");
+    } catch (error) {
+        console.error('Login error:', error);
+        switch (error.code) {
+            case 'auth/invalid-email':
+                setError('Invalid email address');
+                break;
+            case 'auth/user-not-found':
+                setError('No account found with this email');
+                break;
+            case 'auth/wrong-password':
+                setError('Incorrect password');
+                break;
+            case 'auth/invalid-credential':
+                setError('Invalid credentials. Please check your email and password.');
+                break;
+            default:
+                setError('Failed to sign in. Please check your credentials.');
+        }
     }
-else if (error.code==="auth/user-not-found"){
-  setError("No account with this email")
+  
+    setLoading(false);
   }
-  else if (error.code==="auth/wrong-password"){
-setError("Incorrect Password"
-)
-  }else{
-    setError("Failed to sign in. Please check your credentials.")
-  }}
-  setLoading(false)
-}
+  
   return (
     <div className="login-container">
       <div className="login-form">

@@ -27,29 +27,30 @@ console.log("creating account with",{email})
  console.log("Created Account",{userCredentionals})
  navigate("/")
 }
-catch(error){
-  console.error('Detailed signup error:',{
-    code:error.code,
-    message:error.message,
-    fullError:error
-  })
-switch(error.code){
-  case "auth/email-already-in-use":
-    setError("An account with this email already exist");
-    break;
-  case "auth/weak-password":
-    setError("'Password is too weak. Please use a stronger password."
-    )
-    break;
-  case "auth/operation-not-allowed":
-    setError('Email/password accounts are not enabled.Please contact support.')
-    break;
+catch (err) {
+  console.error('Detailed signup error:', {
+    code: err.code,
+    message: err.message,
+    fullError: err
+  });
+
+  switch (err.code) {
+    case "auth/email-already-in-use":
+      setError("An account with this email already exists");
+      break;
+    case "auth/weak-password":
+      setError("Password is too weak. Please use a stronger password.");
+      break;
+    case "auth/operation-not-allowed":
+      setError("Email/password accounts are not enabled. Please contact support.");
+      break;
     case "auth/invalid-email":
-                    setError('Invalid email address');
-                    break;
-                    default:
-                      setError(`Failed to create account: ${error.message}`);    
-}
+      setError("Invalid email address");
+      break;
+    default:
+      setError(`Failed to create account: ${err.message}`);
+  }
+
 }
 setLoading(false)
 }
