@@ -1,0 +1,100 @@
+.quiz-setup-container {
+    min-height: 100vh;
+    background: #e3f2fd; /* Light blue background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .quiz-setup-content {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 24px rgba(25, 118, 210, 0.08);
+    padding: 2.5rem 2rem;
+    max-width: 600px;
+    width: 100%;
+  }
+  
+  .quiz-setup-content h2 {
+    color: #1976d2;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-weight: 500;
+  }
+  
+  .form-group input[type="number"],
+  .form-group select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #e3f0ff;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #f9fbff;
+    transition: border-color 0.2s;
+    color: #333;
+  }
+  
+  .form-group input[type="number"]:focus,
+  .form-group select:focus {
+    outline: none;
+    border-color: #0e60b2;
+    background-color: #fff;
+  }
+  
+  .form-group.checkbox {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+  }
+  
+  .form-group.checkbox label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0;
+    cursor: pointer;
+    color: #333;
+  }
+  
+  .form-group.checkbox input[type="checkbox"] {
+    width: 1.2rem;
+    height: 1.2rem;
+    cursor: pointer;
+  }
+  
+  .start-quiz-btn {
+    width: 100%;
+    padding: 1rem;
+    background-color: #1976d2;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .start-quiz-btn:hover {
+    background-color: #1565c0;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 480px) {
+    .quiz-setup-content {
+      padding: 2rem 1rem;
+      max-width: 90%;
+    }
+  }
+  
