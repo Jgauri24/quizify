@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useNavigate,Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import "./Signup.css"
+import SignupText from '../assets/SignupText';
 const Signup = () => {
   const [email,setEmail]=useState("");
   const[password,setPassword]=useState("");
@@ -55,7 +56,7 @@ setLoading(false)
   return (
    <div className="signup-container">
      <div className="signup-form">
-        {/* <LoginText className="login-image"></LoginText> */}
+     <SignupText className="login-image"></SignupText>
         {error && <div className="error-message">{error}</div>}
         <form onSubmit={handleSubmit}>
           <div className="form-group">

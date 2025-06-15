@@ -1,0 +1,106 @@
+.signup-text-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+  }
+  
+  .signup-text {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #1976d2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      sans-serif;
+  }
+  
+  .letter {
+    display: inline-block;
+    animation: bounce 1s ease infinite;
+    animation-delay: calc(0.1s * var(--i));
+    background: linear-gradient(45deg, #1976d2, #1565c0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 0.2rem;
+  }
+  
+  .s {
+    --i: 1;
+  }
+  .i {
+    --i: 2;
+  }
+  .g {
+    --i: 3;
+  }
+  .n {
+    --i: 4;
+  }
+  .u {
+    --i: 5;
+  }
+  .p {
+    --i: 6;
+  }
+  
+  .sparkle {
+    font-size: 2rem;
+    margin-left: 0.3rem;
+    animation: twinkle 1.5s ease infinite;
+    filter: drop-shadow(0 0 2px rgba(25, 118, 210, 0.3));
+  }
+  
+  @keyframes bounce {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+  }
+  
+  @keyframes twinkle {
+    0%,
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.7;
+      transform: scale(1.2);
+    }
+  }
+  
+  /* Hover effects */
+  .login-text:hover .letter {
+    animation: colorWave 1s ease infinite;
+  }
+  
+  @keyframes colorWave {
+    0%,
+    100% {
+      background: linear-gradient(45deg, #1976d2, #1565c0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    50% {
+      background: linear-gradient(45deg, #1565c0, #1976d2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+  
+  /* Responsive design */
+  @media (max-width: 480px) {
+    .login-text {
+      font-size: 2rem;
+    }
+    .sparkle {
+      font-size: 1.5rem;
+    }
+  }
+  
