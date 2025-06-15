@@ -51,7 +51,7 @@
     color: #0d47a1;
 }
 
-.login-btn {
+.logout-btn {
     text-decoration: none;
     background: #fff;
     color: #1565c0;
@@ -64,7 +64,7 @@
     transition: background 0.2s, color 0.2s;
 }
 
-.login-btn:hover {
+.logout-btn:hover {
     background: #e3f0ff;
     color: #0d47a1; 
 }

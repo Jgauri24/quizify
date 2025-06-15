@@ -2,19 +2,21 @@
   import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './About.css';
+import Navbar from '../components/Navbar';
 
 function About() {
     const navigate = useNavigate();
 
     return (
         <div className="about-container">
+          <Navbar/>
             <div className="about-content">
-                <h1>About Quiz App</h1>
+                <h1>About Quizify</h1>
 
                 <section className="about-section">
-                    <h2>Welcome to Quiz App!</h2>
+                    <h2>Welcome!</h2>
                     <p>
-                        Quiz App is an interactive platform designed to test your knowledge across various subjects.
+                        Quizify is an interactive platform designed to test your knowledge across various subjects.
                         Whether you're looking to challenge yourself or learn something new, our quizzes provide
                         an engaging and educational experience.
                     </p>

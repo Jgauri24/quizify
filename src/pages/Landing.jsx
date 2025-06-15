@@ -3,6 +3,7 @@ import {useNavigate} from "react-router-dom";
 import {useAuth} from "../context/AuthContext"
 import "./Landing.css";
 import QuizyLogo from "../assets/QuizLogo";
+import Navbar from "../components/Navbar";
 const Landing = () => {
   const nagivate=useNavigate();
   const {logout}=useAuth()
@@ -18,9 +19,10 @@ catch(err){
   }
   return (
     <div className="landing">
+      <Navbar/>
       <div className="landing-card">
         <QuizyLogo className="landing-img" />
-        <h1>Welcome to Quizy!</h1>
+        <h1>Welcome to Quizify!</h1>
         <p className="landing-tagline">
           Test your knowledge with fun quizzes. Ready to play?
         </p>

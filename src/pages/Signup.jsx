@@ -10,7 +10,7 @@ const Signup = () => {
   const [error,setError]=useState("");
   const [loading,setLoading]=useState(false);
   const navigate=useNavigate()
-  const {signup} =useAuth();
+  const {signup,logout} =useAuth();
 const handleSubmit= async (e)=>{
 e.preventDefault();
 if (password!==confirmPassword){
@@ -25,8 +25,9 @@ setLoading(true)
 console.log("creating account with",{email})
  const userCredentionals=await signup(email,password)
  console.log("Created Account",{userCredentionals})
- navigate("/")
-}
+ alert('Your account has been signed up successfully!');
+ await logout();
+            navigate('/login');}
 catch (err) {
   console.error('Detailed signup error:', {
     code: err.code,

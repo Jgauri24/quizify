@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
-import Navbar from './components/Navbar';
 import {useAuth} from "./context/AuthContext"
 import Landing from './pages/Landing';
 
@@ -15,10 +14,10 @@ const App = () => {
   const  {currentUser}  = useAuth();
   return (
   <Router>
-    <Navbar/>
+
     <Routes>
     <Route path="/login" element={!currentUser?<Login/>:<Navigate to="/"/>} />
-    <Route path="/signup" element={!currentUser?<Signup/>:<Navigate to="/"/>} />
+    <Route path="/signup" element={!currentUser?<Signup/>:<Navigate to="/login"/>} />
     <Route path="/" element={currentUser?<Landing/>:<Navigate to="/login"/>} />
     <Route path="/about" element={<About/>} />
     <Route path="/quiz-setup" element={currentUser ? <QuizSetup /> : <Navigate to="/login" />} />

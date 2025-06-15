@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+
 import "./Quizsetup.css"
+import Navbar from "../components/Navbar";
 const QuizSetup = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -35,8 +37,9 @@ const QuizSetup = () => {
   };
   return (
     <div className="quiz-setup-container">
+      <Navbar/>
       <div className="quiz-setup-content">
-        <h2>Quiz Setup</h2>
+        <h2>Select Select</h2>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="numQuestions">Number of Questions</label>
