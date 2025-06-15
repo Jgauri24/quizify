@@ -12,7 +12,7 @@ import Review from './pages/Review';
 import Result from "./pages/Result";
 
 const App = () => {
-  const  currentUser  = useAuth();
+  const  {currentUser}  = useAuth();
   return (
   <Router>
     <Navbar/>

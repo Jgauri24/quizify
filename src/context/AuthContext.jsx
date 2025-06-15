@@ -42,7 +42,7 @@ const value={
 
 }
 return (
-    <AuthContext.Provider>
+    <AuthContext.Provider value={value}>
     {!loading && children}
     </AuthContext.Provider>
 )

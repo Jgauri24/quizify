@@ -1,8 +1,21 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import {useNavigate} from "react-router-dom";
+import {useAuth} from "../context/AuthContext"
 import "./Landing.css";
 import QuizyLogo from "../assets/QuizLogo";
 const Landing = () => {
+  const nagivate=useNavigate();
+  const {logout}=useAuth()
+  const handleLogout=async()=>{
+
+try{
+  await logout()
+  nagivate("/login")
+}
+catch(err){
+  console.error('Failed to log out:', err);
+}
+  }
   return (
     <div className="landing">
       <div className="landing-card">
@@ -12,12 +25,12 @@ const Landing = () => {
           Test your knowledge with fun quizzes. Ready to play?
         </p>
         <div className="landing-buttons">
-          <Link to="/" className="btn btn-primary">
+          <button className="btn btn-primary" onClick={()=>nagivate("quiz-setup")}>
             Start Quiz
-          </Link>
-          <Link to="/about" className="btn btn-secondary">
-            Learn More
-          </Link>
+          </button>
+          <button  className="btn btn-secondary" onClick={handleLogout}>
+            Logout
+          </button>
         </div>
       </div>
     </div>
