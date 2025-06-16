@@ -5,6 +5,7 @@ import QuestionCard from '../components/QuestionCard';
 import Timer from '../components/Timer';
 import useTimer from '../hooks/useTimer';
 import questionsData from '../data/questions.json';
+import "./Quiz.css"
 const Quiz = () => {
   const location=useLocation();
   const navigate=useNavigate();

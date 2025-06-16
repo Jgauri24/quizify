@@ -1,10 +1,11 @@
 import React,{useState,useEffect} from 'react'
-
+import "./Timer.css"
 const Timer = ({timeLimit,onTimeUp}) => {
-  const [timeLeft,setTimeLeft]=useState()
+  const [timeLeft,setTimeLeft]=useState(timeLimit)
   useEffect(()=>{
     if (timeLeft<=0){
       onTimeUp()
+      return
     }
     const timer=setInterval(()=>{
       setTimeLeft(el=>el-1)

@@ -1,0 +1,37 @@
+.quiz-container {
+    min-height: 100vh;
+    background-color: #f8f9fa;
+  }
+  
+  .quiz-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  .quiz-progress {
+    text-align: center;
+    color: #666;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .next-btn {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin: 2rem auto 0;
+    padding: 1rem;
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .next-btn:hover {
+    background-color: #1557b0;
+  }
+  
