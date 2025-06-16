@@ -40,19 +40,21 @@ if (updatedAnswers.length===questions.length){
   navigate("/result",{
     state:{
       score,
-      totalQuesions:questions.length,
+      totalQuestions:questions.length,
       userAnswers: updatedAnswers,
                         questions
     }
   })
+  return
 }
+setCurrentQuestionIndex((prev) => prev + 1); 
+setSelectedAnswer('');
+  }
 if (questions.length === 0) {
   return <div>Loading...</div>;
 }
 
-
-  }
-  const currentQuestion = questions[currentQuestionIndex];
+const currentQuestion = questions[currentQuestionIndex]; 
   return (
 <div className='quiz-container'>
   <Navbar/>
