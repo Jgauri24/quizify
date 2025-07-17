@@ -1,0 +1,11 @@
+result-container {
+    min-height: 100vh;
+    background-color: #f8f9fa;
+  }
+  
+  .result-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
