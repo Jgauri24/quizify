@@ -1,18 +1,25 @@
-
+/* Box-sizing for consistency */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
+/* Main container */
 .review-container {
   min-height: 100vh;
   background: linear-gradient(to bottom, #f5f7fa, #e4ecf2);
   padding: 3rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
+/* Review content box */
 .review-content {
   max-width: 860px;
+  width: 100%;
   margin: 0 auto;
   padding: 2.5rem;
   background-color: #ffffff;
@@ -21,6 +28,7 @@
   animation: fadeIn 0.4s ease-in-out;
 }
 
+/* Animation */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -36,6 +44,7 @@
 .back-btn {
   display: block;
   width: 220px;
+  max-width: 100%;
   margin: 2.5rem auto 0;
   padding: 0.9rem 1.5rem;
   background: linear-gradient(to right, #4a90e2, #357abd);
@@ -60,6 +69,7 @@
   outline-offset: 3px;
 }
 
+/* Error message styling */
 .error-message {
   text-align: center;
   padding: 2.5rem 2rem;
@@ -68,6 +78,7 @@
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
   margin: 2rem auto;
   max-width: 600px;
+  width: 100%;
   animation: fadeIn 0.4s ease-in-out;
 }
 
@@ -85,6 +96,7 @@
   margin-bottom: 1.5rem;
 }
 
+/* Medium Devices: Tablets */
 @media (max-width: 768px) {
   .review-content {
     padding: 1.5rem;
@@ -97,5 +109,37 @@
 
   .error-message {
     padding: 2rem 1.2rem;
+  }
+
+  .error-message h2 {
+    font-size: 1.5rem;
+  }
+
+  .error-message p {
+    font-size: 0.95rem;
+  }
+}
+
+/* Small Devices: Phones */
+@media (max-width: 480px) {
+  .review-content {
+    padding: 1.2rem;
+  }
+
+  .back-btn {
+    font-size: 0.95rem;
+    padding: 0.8rem 1.2rem;
+  }
+
+  .error-message {
+    padding: 1.5rem 1rem;
+  }
+
+  .error-message h2 {
+    font-size: 1.3rem;
+  }
+
+  .error-message p {
+    font-size: 0.9rem;
   }
 }

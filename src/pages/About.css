@@ -1,10 +1,9 @@
 .about-container {
-  background-color:#4691db;
+  background-color: #4691db;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
-
+  padding: 3rem 1rem;
 }
 
 .about-content {
@@ -17,7 +16,7 @@
 }
 
 .about-content h1 {
-  font-size: 2.2rem;
+  font-size: 2.5rem;
   color: #1976d2;
   text-align: center;
   margin-bottom: 2rem;
@@ -29,13 +28,13 @@
 
 .about-section h2 {
   color: #1565c0;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   margin-bottom: 1rem;
 }
 
 .about-section p {
   color: #444;
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   line-height: 1.6;
 }
 
@@ -89,20 +88,62 @@
   background-color: #1565c0;
 }
 
-@media (max-width: 480px) {
+/* Tablets */
+@media (max-width: 768px) {
   .about-content {
-    padding: 2rem 1rem;
+    padding: 2rem 1.5rem;
   }
 
   .about-content h1 {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   .about-section h2 {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
+  }
+
+  .about-section p {
+    font-size: 1rem;
   }
 
   .start-btn {
+    width: 100%;
+    font-size: 1rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .about-container {
+    padding: 2rem 1rem;
+  }
+
+  .about-content {
+    padding: 1.5rem 1rem;
+  }
+
+  .about-content h1 {
+    font-size: 1.6rem;
+  }
+
+  .about-section h2 {
+    font-size: 1.2rem;
+  }
+
+  .about-section p {
+    font-size: 0.95rem;
+  }
+
+  .features-list li {
+    font-size: 0.95rem;
+  }
+
+  .steps-list {
+    font-size: 0.95rem;
+  }
+
+  .start-btn {
+    font-size: 1rem;
     width: 100%;
   }
 }

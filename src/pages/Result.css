@@ -1,11 +1,45 @@
-result-container {
-    min-height: 100vh;
-    background-color: #f8f9fa;
+.result-container {
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  padding: 2rem 1rem; /* ensures spacing on smaller screens */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.result-content {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+/* Optional fadeIn animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
   }
-  
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
   .result-content {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem;
+    padding: 1.5rem;
   }
-  
+}
+
+@media (max-width: 480px) {
+  .result-content {
+    padding: 1.2rem;
+    border-radius: 8px;
+  }
+}
